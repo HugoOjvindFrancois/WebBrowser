@@ -6,10 +6,13 @@ TARGET = SteakBrowser
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    settingdialog.cpp
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    settingdialog.ui
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    settingdialog.h

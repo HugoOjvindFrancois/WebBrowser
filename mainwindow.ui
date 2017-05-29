@@ -16,10 +16,12 @@
   <property name="styleSheet">
    <string notr="true">QFrame#frame_3{
 	border: 0;
+	margin: 0;
 }
 
 QFrame#frame{
 	margin-bottom: 0;
+	margin: 0;
 	border-bottom: 1px solid lightgray;
 	border-top: 0;
 	border-right: 0;
@@ -27,40 +29,36 @@ QFrame#frame{
 }
 
 QTabWidget::pane { /* The tab widget frame */
-    border-top: 2px solid #C2C7CB;
 	margin-top: 0;
+	margin: 0;
+	border-top: 1px solid lightgray;
 }
 
 QTabWidget::tab-bar {
-    left: 5px; /* move to the right by 5px */
+	/*border-top: 1px solid lightgray;*/
 }
 
 /* Style the tab using the tab sub-control. Note that
     it reads QTabBar _not_ QTabWidget */
 QTabBar::tab {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-    border: 1px solid #C4C4C3;
-    border-bottom-color: #C2C7CB; /* same as the pane color */
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    background-color:  #E1E1E1;
+    border-bottom: 0;
+	border-top: 0;
+	border-right: 1px solid  #C4C4C3;
+	border-left: 0;
     min-width: 8ex;
-    padding-top: 1px;
-	padding-bottom: 1px;
+    padding-top: 2px;
+	padding-bottom: 2px;
 	padding-right: 4px;
 	padding-left: 4px;
 }
 
 QTabBar::tab:selected, QTabBar::tab:hover {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
-                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+    background-color: #fafafa;
 }
 
 QTabBar::tab:selected {
     border-color: #9B9B9B;
-    border-bottom-color: #C2C7CB; /* same as pane color */
 	color: black;
 }
 
@@ -82,13 +80,26 @@ QProgressBar {
 	border-right: 0;
 	border-left: 0;
     border-radius: 0;
+	margin: 0;
 }
 
 QProgressBar::chunk {
     background-color: #05B8CC;
     width: 20px;
 }
+
+QStatusBar {
+    background: white;
+}
+
+QStatusBar::item {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
 </string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -156,33 +167,14 @@ QProgressBar::chunk {
       </widget>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QProgressBar" name="progressBar">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="value">
-       <number>0</number>
-      </property>
-      <property name="textVisible">
-       <bool>false</bool>
-      </property>
-      <property name="invertedAppearance">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -251,59 +243,51 @@ QProgressBar::chunk {
          <property name="text">
           <string>↻</string>
          </property>
+         <property name="shortcut">
+          <string>F5</string>
+         </property>
         </widget>
        </item>
        <item>
-        <widget class="QTextBrowser" name="textBrowser">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
+        <widget class="QPushButton" name="pushButton_7">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>414</width>
-           <height>25</height>
+           <width>30</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>16777215</width>
-           <height>25</height>
+           <width>30</width>
+           <height>16777215</height>
           </size>
          </property>
-         <property name="cursor" stdset="0">
-          <cursorShape>IBeamCursor</cursorShape>
+         <property name="text">
+          <string>H</string>
          </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="inputMethodHints">
+          <set>Qt::ImhUrlCharactersOnly</set>
          </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustIgnored</enum>
-         </property>
-         <property name="tabChangesFocus">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>false</bool>
-         </property>
-         <property name="acceptRichText">
+         <property name="frame">
           <bool>false</bool>
          </property>
          <property name="placeholderText">
           <string>Enter URL...</string>
          </property>
-         <property name="openExternalLinks">
-          <bool>true</bool>
+         <property name="cursorMoveStyle">
+          <enum>Qt::LogicalMoveStyle</enum>
          </property>
-         <property name="openLinks">
+         <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
         </widget>
@@ -312,13 +296,13 @@ QProgressBar::chunk {
         <widget class="QPushButton" name="pushButton_4">
          <property name="minimumSize">
           <size>
-           <width>45</width>
+           <width>40</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>45</width>
+           <width>40</width>
            <height>16777215</height>
           </size>
          </property>
@@ -349,7 +333,88 @@ QProgressBar::chunk {
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_8">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>35</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>35</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Se</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>S</string>
+         </property>
+        </widget>
+       </item>
       </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QProgressBar" name="progressBar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
    </layout>
