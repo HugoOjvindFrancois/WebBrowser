@@ -2,7 +2,7 @@ QT       += core gui webenginewidgets webengine
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = SteakBrowser
+TARGET = "Steak Browser"
 TEMPLATE = app
 
 SOURCES += main.cpp \

@@ -96,6 +96,30 @@ QStatusBar::item {
     border: 1px solid lightgray;
     border-radius: 3px;
 }
+
+QPushButton{
+	border: 0;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: &quot;#ffffff&quot;;
+	color: rgb(127, 127, 127);
+}
+
+QPushButton:hover{
+	background-color:lightgray;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+
+QLineEdit#lineEdit{
+	border: 0;
+	border-radius: 3px;
+	padding: 5px;
+}
 </string>
   </property>
   <property name="toolButtonStyle">
