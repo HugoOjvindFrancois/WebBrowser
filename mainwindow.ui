@@ -75,8 +75,8 @@ QWidget#centralwidget{
 }
 
 QProgressBar {
-    border-bottom: 2px solid grey;
-    border-top: 2px solid grey;
+    border-bottom: 2px solid lightgray;
+    border-top: 2px solid lightgray;
 	border-right: 0;
 	border-left: 0;
     border-radius: 0;
@@ -84,7 +84,7 @@ QProgressBar {
 }
 
 QProgressBar::chunk {
-    background-color: #05B8CC;
+    background-color:	lightgray;/*rgb(240, 240, 240); /*#05B8CC;*/
     width: 20px;
 }
 
@@ -100,7 +100,7 @@ QStatusBar::item {
 QPushButton{
 	border: 0;
 	border-radius: 3px;
-	padding: 5px;
+	padding: 4px;
 	background-color: &quot;#ffffff&quot;;
 	color: rgb(127, 127, 127);
 }
@@ -118,7 +118,7 @@ QPushButton:pressed {
 QLineEdit#lineEdit{
 	border: 0;
 	border-radius: 3px;
-	padding: 5px;
+	padding: 4px;
 }
 </string>
   </property>
@@ -265,7 +265,7 @@ QLineEdit#lineEdit{
           </size>
          </property>
          <property name="text">
-          <string>↻</string>
+          <string>⟳</string>
          </property>
          <property name="shortcut">
           <string>F5</string>
@@ -378,7 +378,7 @@ QLineEdit#lineEdit{
           </size>
          </property>
          <property name="text">
-          <string>Se</string>
+          <string>✍</string>
          </property>
         </widget>
        </item>
@@ -403,7 +403,7 @@ QLineEdit#lineEdit{
           </size>
          </property>
          <property name="text">
-          <string>S</string>
+          <string>⚙</string>
          </property>
         </widget>
        </item>

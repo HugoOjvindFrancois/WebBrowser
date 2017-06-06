@@ -76,8 +76,8 @@ void MainWindow::on_pushButton_5_clicked()
     viewList << view;
     newLayout->addWidget(view);
     newLayout->setContentsMargins(0,0,0,0);
-    view->load(QUrl("http://messenger.com"));
-    ui->tabWidget->addTab(newFrame, "Messenger");
+    view->load(QUrl("http://google.com"));
+    ui->tabWidget->addTab(newFrame, view->title());
     ui->tabWidget->setCurrentIndex(viewList.size() - 1);
     connect(view,SIGNAL(loadFinished(bool)),this,SLOT(on_page_load(bool)));
     connect(view,SIGNAL(loadProgress(int)),ui->progressBar,SLOT(setValue(int)));
@@ -135,7 +135,19 @@ void MainWindow::on_pushButton_8_clicked()
     QString input = QInputDialog::getText(this, "Search", "Search something ?", QLineEdit::Normal, QString(), &ok);
     if (ok && !input.isEmpty()) {
         QMessageBox::information(this, "Search", "Hi, I will search " + input + " in a minute.");
-    } else {
-        QMessageBox::critical(this, "Search", "It's empty you bastard !");
+        QString url = "https://www.google.fr/?gws_rd=ssl#q=";
+        url += input.replace(' ','+');
+        QFrame *newFrame = new QFrame(ui->tabWidget);
+        QVBoxLayout* newLayout = new QVBoxLayout();
+        newFrame->setLayout(newLayout);
+        QWebEngineView* view = new QWebEngineView(this);
+        viewList << view;
+        newLayout->addWidget(view);
+        newLayout->setContentsMargins(0,0,0,0);
+        view->load(QUrl(url));
+        ui->tabWidget->addTab(newFrame, view->title());
+        ui->tabWidget->setCurrentIndex(viewList.size() - 1);
+        connect(view,SIGNAL(loadFinished(bool)),this,SLOT(on_page_load(bool)));
+        connect(view,SIGNAL(loadProgress(int)),ui->progressBar,SLOT(setValue(int)));
     }
 }
