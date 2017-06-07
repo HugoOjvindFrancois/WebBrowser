@@ -134,7 +134,6 @@ void MainWindow::on_pushButton_8_clicked()
     bool ok = false;
     QString input = QInputDialog::getText(this, "Search", "Search something ?", QLineEdit::Normal, QString(), &ok);
     if (ok && !input.isEmpty()) {
-        QMessageBox::information(this, "Search", "Hi, I will search " + input + " in a minute.");
         QString url = "https://www.google.fr/?gws_rd=ssl#q=";
         url += input.replace(' ','+');
         QFrame *newFrame = new QFrame(ui->tabWidget);

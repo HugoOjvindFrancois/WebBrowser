@@ -265,7 +265,7 @@ QLineEdit#lineEdit{
           </size>
          </property>
          <property name="text">
-          <string>⟳</string>
+          <string>↻</string>
          </property>
          <property name="shortcut">
           <string>F5</string>
@@ -320,13 +320,13 @@ QLineEdit#lineEdit{
         <widget class="QPushButton" name="pushButton_4">
          <property name="minimumSize">
           <size>
-           <width>40</width>
+           <width>45</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>40</width>
+           <width>45</width>
            <height>16777215</height>
           </size>
          </property>
@@ -354,31 +354,6 @@ QLineEdit#lineEdit{
          </property>
          <property name="shortcut">
           <string>Ctrl+T</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_8">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>35</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>35</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>✍</string>
          </property>
         </widget>
        </item>
