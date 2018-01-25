@@ -138,6 +138,11 @@ void MainWindow::on_pushButton_8_clicked() {
 }
 
 void MainWindow::loadUrl(QString url) {
+
+    if (!url.contains("http")) {
+        url = "file:///" + url;
+    }
+
     QFrame *newFrame = new QFrame(ui->tabWidget);
     QVBoxLayout* newLayout = new QVBoxLayout();
     newFrame->setLayout(newLayout);
@@ -151,3 +156,4 @@ void MainWindow::loadUrl(QString url) {
     connect(view,SIGNAL(loadFinished(bool)),this,SLOT(on_page_load(bool)));
     connect(view,SIGNAL(loadProgress(int)),ui->progressBar,SLOT(setValue(int)));
 }
+
